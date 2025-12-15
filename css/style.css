@@ -1,9 +1,40 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #f2f2f2;
 }
 
 #app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   padding: 20px;
-  font-size: 20px;
+}
+
+/* הלוח עצמו */
+.board {
+  width: min(90vmin, 600px);
+  height: min(90vmin, 600px);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 10px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* תא בלוח */
+.cell {
+  display: grid;
+  place-items: center;
+  font-size: clamp(18px, 4vmin, 32px);
+  user-select: none;
+}
+
+.cell.light {
+  background: #eeeed2;
+}
+
+.cell.dark {
+  background: #769656;
 }
